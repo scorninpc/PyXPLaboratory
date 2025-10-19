@@ -1,5 +1,8 @@
-# Pylon Addon Template
+# Pylon XP Laboratory
 
-This repo contains everything you need to get started with making a Pylon addon. For the Kotlin version, see [here](https://github.com/pylonmc/pylon-addon-template/tree/kotlin).
 
-For more information, see the [\'Creating addons\' section in the Pylon docs](https://pylonmc.github.io/creating-addons/getting-started/).
+### 📢 Warning
+
+> This is just a test to learn about add-ons, items, blocks, and machines. Developers can change anything at any time and break the add-on.
+
+As Pylon use Research Point to research items, I created this laboratory to exchange XP by Research points
