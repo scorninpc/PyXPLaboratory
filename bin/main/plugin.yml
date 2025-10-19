@@ -1,0 +1,8 @@
+name: PyXPLaboratory
+version: 1.0.0
+main: io.github.scorninpc.pyxplaboratory.PyXPLaboratory
+load: STARTUP
+depend:
+  - PylonCore
+  - PylonBase
+api-version: "1.21"

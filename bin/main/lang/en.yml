@@ -1,0 +1,16 @@
+addon: "PyXPLaboratory"
+
+guide:
+  page:
+    xplaboratorypage: XPLaboratory
+
+item:
+  baguette:
+    name: "Baguette"
+    lore: |-
+      <arrow> The <red>best</red>food
+
+  xplaboratory:
+    name: "XP Laboratory"
+    lore: |-
+      <arrow> Trade your XP for Research Points
