@@ -5,12 +5,8 @@ guide:
     xplaboratorypage: XPLaboratory
 
 item:
-  baguette:
-    name: "Baguette"
-    lore: |-
-      <arrow> The <red>best</red>food
-
   xplaboratory:
+    waila: "XP Laboratory"
     name: "XP Laboratory"
     lore: |-
       <arrow> Trade your XP for Research Points

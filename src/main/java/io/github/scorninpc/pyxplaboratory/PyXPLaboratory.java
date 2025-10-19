@@ -11,6 +11,7 @@ import io.github.pylonmc.pylon.core.item.PylonItem;
 import io.github.pylonmc.pylon.core.item.builder.ItemStackBuilder;
 import io.github.pylonmc.pylon.core.recipe.PylonRecipe;
 import io.github.pylonmc.pylon.core.recipe.RecipeType;
+import io.github.scorninpc.pyxplaboratory.items.XPLaboratoryItem;
 import io.papermc.paper.datacomponent.DataComponentTypes;
 import io.papermc.paper.datacomponent.item.FoodProperties;
 import lombok.Getter;
@@ -34,6 +35,9 @@ public class PyXPLaboratory extends JavaPlugin implements PylonAddon {
 	// The `instance` field stores the instance of the addon (there's only ever one)
 	@Getter private static PyXPLaboratory instance;
 
+	// page/category item
+	public static NamespacedKey pageKey;
+
 	// Called when our plugin is enabled
 	@Override
 	public void onEnable() {
@@ -42,26 +46,11 @@ public class PyXPLaboratory extends JavaPlugin implements PylonAddon {
 		// Every Pylon addon must call this BEFORE doing anything Pylon-related
 		registerWithPylon();
 
-		// cria as keys
-		NamespacedKey pageKey = new NamespacedKey(PyXPLaboratory.getInstance(), "xplaboratorypage");
-		NamespacedKey itemKey = new NamespacedKey(PyXPLaboratory.getInstance(), "xplaboratory");
+		// initialize the keys
+		pageKey = new NamespacedKey(PyXPLaboratory.getInstance(), "xplaboratorypage");
 
-		// cria o block/item
-		ItemStack XPLABORATORY = ItemStackBuilder.pylon(Material.SCULK_SHRIEKER, itemKey).build();
-
-		// cria a categoria e adiciona ele na categoria
-		SimpleStaticGuidePage XPLABORATORY_PAGE = new SimpleStaticGuidePage(pageKey, Material.SCULK_SENSOR);
-		PylonGuide.getRootPage().addPage(XPLABORATORY_PAGE);
-		XPLABORATORY_PAGE.addItem(XPLABORATORY);
-
-		// cria o recipe
-		ShapedRecipe r = new ShapedRecipe(itemKey, XPLABORATORY);
-			r.shape("   ", "BGB", "   ");
-			r.setIngredient('B', Material.BRICK);
-			r.setIngredient('G', Material.GLASS);
-			r.setCategory(CraftingBookCategory.BUILDING);
-			RecipeType.VANILLA_SHAPED.addRecipe(r);
-
+		// initialize the itens
+		XPLaboratoryItem.initialize();
 	}
 
 	@Override
